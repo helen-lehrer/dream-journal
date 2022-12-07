@@ -7,7 +7,7 @@ function DreamDetail(props) {
   return(
     <React.Fragment>
       <h1>Dream Details</h1>
-      <h3>{dream.date}</h3>
+      <p>{dream.theme}</p>
       <p>{dream.description}</p>
       <p>{dream.reflections}</p>
       <p>{dream.happyBefore}</p>

@@ -12,7 +12,7 @@ function ReusableForm(props) {
     props.onUpdating({
       description: event.target.description.value,
       reflections: event.target.reflections.value,
-      date: event.target.date.value,
+      theme: event.target.themes.value,
       symbols: event.target.symbols.value,
       sadBefore: event.target.sadBefore.value,
       neutralBefore: event.target.neutralBefore.value,
@@ -22,7 +22,6 @@ function ReusableForm(props) {
     });
     navigate('/dream-list');
   }
-  console.log(props)
     return (
       <React.Fragment>
         <form onSubmit={handleFormSubmission}>
@@ -30,6 +29,10 @@ function ReusableForm(props) {
           type='text'
           name='description'
           placeholder='Describe your dream' />
+          <input
+          type='text'
+          name='themes'
+          placeholder='Theme' />
           <input
           type='text'
           name='reflections'
@@ -56,8 +59,6 @@ function ReusableForm(props) {
           id='happyBefore'
           value='happy'/>
           <label htmlFor="happyBefore">happy</label>
-          <label htmlFor="date">Date:</label>
-          <input type="date" id="date" name="date"></input>
           <button type='submit'>Submit</button>
           </form>
         </React.Fragment>
