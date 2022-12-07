@@ -49,6 +49,9 @@ function ReusableForm(props) {
           id='happyBefore'
           value='happy'/>
           <label htmlFor="happyBefore">happy</label>
+          <label htmlFor="date">Date:</label>
+          <input type="date" id="date" name="date"></input>
+
           <button type='submit'>Submit</button>
           </form>
         </React.Fragment>

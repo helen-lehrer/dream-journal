@@ -47,8 +47,9 @@ const handleEditingDreamInList = () => {
   console.log("handleEditingDreamInList")
 }
   
-const handleChangingSelectedDream = () => {
-  console.log("handleChangingSelectedDream")
+const handleChangingSelectedDream = (id) => {
+  const selection = mainDreamList.filter(dream => dream.id === id)[0];
+  setSelectedDream(selection);
 }
 
 const handleDeletingDream = () => {
@@ -63,7 +64,7 @@ const handleDeletingDream = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-out" element={<SignOut />} />
         <Route path="/dream-detail" element={<DreamDetail dream={selectedDream} onClickingDelete={handleDeletingDream} />} />
-        <Route path="/dream-list" element={<DreamList />} />
+        <Route path="/dream-list" element={<DreamList onDreamSelection={handleChangingSelectedDream} dreamList={mainDreamList}/>} />
         <Route path="/new-dream-form" element={<ReusableForm onNewDreamCreation={handleAddingNewDreamToList}/>} />
         <Route path="/edit-dream-form" element={<ReusableForm onEditDream={handleEditingDreamInList} dream={selectedDream}/>} />
       </Routes>
