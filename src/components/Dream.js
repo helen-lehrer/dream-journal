@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Dream(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenDreamClicked(props.id)}>
-        <h3>{props.date}</h3>
+      <Link to="/dream-detail"><h3>{props.timeStamp.toDateString()}</h3></Link>
         <hr/>
       </div>
     </React.Fragment>
@@ -13,7 +14,7 @@ function Dream(props){
 }
 
 Dream.propTypes = {
-  date: PropTypes.elementType
+  timeStamp: PropTypes.instanceOf(Date)
 }
 
 export default Dream;

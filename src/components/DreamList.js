@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 import Dream from "./Dream";
 
 function DreamList(props){
+  console.log(props.dreamList)
   return (
     <React.Fragment>
       <Link to="/new-dream-form">Add New Dream</Link>
       {props.dreamList.map((dream)=>
-      <Link to="/dream-detail"><Dream
+      <Dream
       whenDreamClicked={props.onDreamSelection}
       date={dream.date}
+      timeStamp={dream.timeStamp}
       id={dream.id}
-      key={dream.id}/></Link>
+      key={dream.id}/>
       )}
     </React.Fragment>
   );

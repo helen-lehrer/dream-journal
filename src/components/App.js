@@ -3,6 +3,7 @@ import './../App.css';
 import { db, auth } from './../firebase.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { formatDistanceToNow } from 'date-fns';
 
 import SignIn from './SignIn';
 import SignOut from './SignOut';
@@ -19,11 +20,14 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const unSubscribe = onSnapshot(collection(db, "dreams"), (collectionSnapshot) => {
+    const unSubscribe = onSnapshot(collection(db, "dreams"), (querySnapshot) => {
         const dreams = [];
-        collectionSnapshot.forEach((doc) => {
+        querySnapshot.forEach((doc) => {
+          const timeStamp = doc.get('timeStamp', {serverTimestamps: "estimate"}).toDate();
+          const jsDate = new Date(timeStamp);
           dreams.push({
             ...doc.data(),
+            timeStamp: jsDate,
             id: doc.id
           });
         });
@@ -43,19 +47,20 @@ function App() {
     await addDoc(collection(db, "dreams"), newDreamData);
   }
 
-const handleEditingDreamInList = () => {
-  console.log("handleEditingDreamInList")
+const handleEditingDream = async (dreamToEdit) => {
+  const dreamRef = doc(db, "dreams", dreamToEdit.id);
+  await updateDoc(dreamRef, dreamToEdit);
 }
   
 const handleChangingSelectedDream = (id) => {
-  console.log(id);
   const selection = mainDreamList.filter(dream => dream.id === id)[0];
   setSelectedDream(selection);
-  console.log(selection);
+
 }
 
-const handleDeletingDream = () => {
-  console.log("handleDeletingDream")
+const handleDeletingDream = async (id) => {
+  await deleteDoc(doc(db, "dreams", id))
+  setSelectedDream(null);
 }
 
   return (
@@ -67,8 +72,8 @@ const handleDeletingDream = () => {
         <Route path="/sign-out" element={<SignOut />} />
         <Route path="/dream-detail" element={<DreamDetail dream={selectedDream} onClickingDelete={handleDeletingDream} />} />
         <Route path="/dream-list" element={<DreamList onDreamSelection={handleChangingSelectedDream} dreamList={mainDreamList}/>} />
-        <Route path="/new-dream-form" element={<ReusableForm onNewDreamCreation={handleAddingNewDreamToList}/>} />
-        <Route path="/edit-dream-form" element={<ReusableForm onEditDream={handleEditingDreamInList} dream={selectedDream}/>} />
+        <Route path="/new-dream-form" element={<ReusableForm onUpdating={handleAddingNewDreamToList}/>} />
+        <Route path="/edit-dream-form" element={<ReusableForm dream={selectedDream} onUpdating={handleEditingDream}/>} />
       </Routes>
     </Router>
 
@@ -76,3 +81,4 @@ const handleDeletingDream = () => {
 }
 
 export default App;
+//onClickingEdit={handleEditingDream} 

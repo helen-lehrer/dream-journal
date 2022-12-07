@@ -1,25 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types"; 
+import { useNavigate } from "react-router-dom";
+import { serverTimestamp } from "firebase/firestore";
+import { v4 } from 'uuid';
 
 function ReusableForm(props) {
+  const navigate = useNavigate();
 
-  function handleNewDreamFormSubmission(event) {
+  function handleFormSubmission(event) {
     event.preventDefault();
-    props.onNewDreamCreation({
+    props.onUpdating({
       description: event.target.description.value,
       reflections: event.target.reflections.value,
       date: event.target.date.value,
       symbols: event.target.symbols.value,
       sadBefore: event.target.sadBefore.value,
       neutralBefore: event.target.neutralBefore.value,
-      happyBefore: event.target.happyBefore.value
+      happyBefore: event.target.happyBefore.value,
+      timeStamp: serverTimestamp(),
+      id: props.dream ? props.dream.id : v4()
     });
+    navigate('/dream-list');
   }
-
-  if (props.onNewDreamCreation) {
+  console.log(props)
     return (
       <React.Fragment>
-        <form onSubmit={handleNewDreamFormSubmission}>
+        <form onSubmit={handleFormSubmission}>
           <input
           type='text'
           name='description'
@@ -52,21 +58,13 @@ function ReusableForm(props) {
           <label htmlFor="happyBefore">happy</label>
           <label htmlFor="date">Date:</label>
           <input type="date" id="date" name="date"></input>
-
           <button type='submit'>Submit</button>
           </form>
         </React.Fragment>
       )}
-    else if (props.onEditDream) {
-    return (
-      <React.Fragment>
-      <h1>Edit Dream</h1>
-      </React.Fragment>
-    )}
-}
-
+    
 ReusableForm.propTypes ={
-  onNewDreamCreation: PropTypes.func,
-  
+  onUpdating: PropTypes.func,
+  dream: PropTypes.object
 }
 export default ReusableForm
