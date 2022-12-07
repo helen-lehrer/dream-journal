@@ -8,6 +8,7 @@ function ReusableForm(props) {
     props.onNewDreamCreation({
       description: event.target.description.value,
       reflections: event.target.reflections.value,
+      date: event.target.date.value,
       symbols: event.target.symbols.value,
       sadBefore: event.target.sadBefore.value,
       neutralBefore: event.target.neutralBefore.value,

@@ -48,8 +48,10 @@ const handleEditingDreamInList = () => {
 }
   
 const handleChangingSelectedDream = (id) => {
+  console.log(id);
   const selection = mainDreamList.filter(dream => dream.id === id)[0];
   setSelectedDream(selection);
+  console.log(selection);
 }
 
 const handleDeletingDream = () => {

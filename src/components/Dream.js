@@ -13,7 +13,7 @@ function Dream(props){
 }
 
 Dream.propTypes = {
-  date: PropTypes.instanceOf(Date)
+  date: PropTypes.elementType
 }
 
 export default Dream;

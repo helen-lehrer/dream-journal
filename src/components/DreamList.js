@@ -8,12 +8,11 @@ function DreamList(props){
     <React.Fragment>
       <Link to="/new-dream-form">Add New Dream</Link>
       {props.dreamList.map((dream)=>
-      <Dream
+      <Link to="/dream-detail"><Dream
       whenDreamClicked={props.onDreamSelection}
       date={dream.date}
       id={dream.id}
-      key={dream.id}/>
-      
+      key={dream.id}/></Link>
       )}
     </React.Fragment>
   );
