@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { auth } from "./../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import './../assets/css/fonts.css';
+import styled from 'styled-components';
+
+const RegisterHeader = styled.h1`
+  font-family: 'Shadows Into Light', cursive;  
+  font-size: 32px;
+  text-align: left;
+  color: black;
+`
 
 function Register(){
 
@@ -21,7 +30,7 @@ function Register(){
 
   return (
   <React.Fragment>
-    <h1>Register</h1>
+    <RegisterHeader>Register</RegisterHeader>
     {signUpSuccess}
     <form onSubmit ={doSignUp}>
       <input

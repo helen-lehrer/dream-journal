@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { auth } from "./../firebase.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import styled from 'styled-components';
+
+const SignInHeader = styled.h1`
+  font-family: 'Shadows Into Light', cursive;  
+  font-size: 32px;
+  text-align: left;
+  color: white;
+`
 
 function SignIn(){
   const [signInSuccess, setSignInSuccess] = useState(null);
@@ -20,7 +28,7 @@ function SignIn(){
 
   return (
     <React.Fragment>
-      <h1>Sign In</h1>
+      <SignInHeader>Sign In</SignInHeader>
       {signInSuccess}
       <form onSubmit={doSignIn}>
         <input
