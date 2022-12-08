@@ -12,6 +12,7 @@ import DreamList from './DreamList';
 import DreamDetail from './DreamDetail';
 import Header from './Header';
 import ReusableForm from './ReusableForm';
+import AuthMessage from './AuthMessage';
 
 function App() {
 
@@ -62,7 +63,21 @@ const handleDeletingDream = async (id) => {
   await deleteDoc(doc(db, "dreams", id))
   setSelectedDream(null);
 }
+console.log(auth.currentUser);
 
+if (auth.currentUser == null) {
+  return (
+    <Router>
+    <Header />
+    <Routes>
+      <Route path="/dream-list" element={<AuthMessage />} />
+      <Route path="/" element={<div><Register/><AuthMessage /></div>} />
+      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-out" element={<SignOut />} />
+    </Routes>
+    </Router>
+  )}
+else if (auth.currentUser != null) { 
   return (
     <Router>
       <Header />
@@ -77,8 +92,7 @@ const handleDeletingDream = async (id) => {
       </Routes>
     </Router>
 
-  );
+  )}
 }
 
 export default App;
-//onClickingEdit={handleEditingDream} 
