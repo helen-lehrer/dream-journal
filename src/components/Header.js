@@ -8,7 +8,7 @@ const DreamJournalHeader = styled.h1`
   font-size: 32px;
   text-align: center;
   color: black;
-  background-color: #b8e2f6;
+  padding: 10px;
 `;
 
 const Navbar = styled.ul`
@@ -16,7 +16,7 @@ const Navbar = styled.ul`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: black;
 `
 
 const NavbarList = styled.li`

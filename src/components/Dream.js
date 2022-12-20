@@ -6,8 +6,7 @@ function Dream(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenDreamClicked(props.id)}>
-      <Link to="/dream-detail"><h3>{props.timeStamp.toDateString()}</h3></Link><span>- {props.theme}</span>
-        <hr/>
+      <Link to="/dream-detail" class="dream-list-heading"><h3 class="dream-list-heading">{props.timeStamp.toDateString()}</h3></Link><span>Themes- {props.theme}</span>
       </div>
     </React.Fragment>
   );
