@@ -9,6 +9,7 @@ const DreamJournalHeader = styled.h1`
   text-align: center;
   color: black;
   padding: 10px;
+ 
 `;
 
 const Navbar = styled.ul`
@@ -16,7 +17,15 @@ const Navbar = styled.ul`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-left-style: none;
+  border-right-style: none;
+
 `
 
 const NavbarList = styled.li`
@@ -25,12 +34,16 @@ const NavbarList = styled.li`
 
 const NavbarLink = styled(Link)`
   display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+  color: black;
+  padding: 0 1rem;
+  margin: .1rem;
   text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover{
-    color: #f4bbd8;
+    color: white;
   }
 `
 

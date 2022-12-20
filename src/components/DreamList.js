@@ -7,18 +7,22 @@ import { Helmet } from 'react-helmet';
 import { images } from './../constants';
 
 const AddNewDreamLink = styled(Link)`
-  text-align: center;
   padding: .5rem;
-  margin: 1rem;
   text-decoration: none;
   box-shadow: 0px 0px 3px 1px white;
   border: none;
   background: #fed5f180;
   color: black;
   font-weight: bold;
+  width: 50%;
+  margin: 1rem auto;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover{
     color: #f4bbd8;
-    background: #3333339f;
+    background: black;
   }
 `
 
@@ -31,6 +35,14 @@ const DreamListContainer = styled.div`
   margin: 1rem .5rem 0 .5rem;
   box-shadow: 0px 0px 3px 1px white;
   background: #fed5f180;
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: 1rem auto;
+
 `
 
 function DreamList(props){

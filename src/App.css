@@ -9,6 +9,5 @@ body {
 }
 .dream-list-heading:hover {
   color: #f4bbd8; 
-  background: #3333339f;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  background: black;
 }
