@@ -7,8 +7,9 @@ import styled from 'styled-components';
 const RegisterHeader = styled.h1`
   font-family: 'Shadows Into Light', cursive;  
   font-size: 32px;
-  text-align: left;
+  text-align: center;
   color: black;
+  margin: 1rem 0;
 `
 
 function Register(){
@@ -33,14 +34,14 @@ function Register(){
     <RegisterHeader>Register</RegisterHeader>
     {signUpSuccess}
     <form onSubmit ={doSignUp}>
-      <div id='register-div'>
+      <div class='login-reg-div'>
         <input
-          class= 'register-inputs'
+          class= 'inputs'
           type='text'
           name='email'
           placeholder='Email' />
         <input
-          class= 'register-inputs'
+          class= 'inputs'
           type='password'
           name='password'
           placeholder='Password' />

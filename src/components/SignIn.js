@@ -6,8 +6,9 @@ import styled from 'styled-components';
 const SignInHeader = styled.h1`
   font-family: 'Shadows Into Light', cursive;  
   font-size: 32px;
-  text-align: left;
-  color: white;
+  text-align: center;
+  color: black;
+  margin: 1rem 0;
 `
 
 function SignIn(){
@@ -31,15 +32,19 @@ function SignIn(){
       <SignInHeader>Sign In</SignInHeader>
       {signInSuccess}
       <form onSubmit={doSignIn}>
-        <input
-          type='text'
-          name='signinEmail'
-          placeholder='email' />
-        <input
-          type='password'
-          name='signinPassword'
-          placeholder='Password' />
-        <button type='submit'>Sign in</button>
+        <div class='login-reg-div'>
+          <input
+            class= 'inputs'
+            type='text'
+            name='signinEmail'
+            placeholder='Email' />
+          <input
+            class= 'inputs'
+            type='password'
+            name='signinPassword'
+            placeholder='Password' />
+          <button type='submit'>Sign in</button>
+        </div>
       </form>
     </React.Fragment>
   )

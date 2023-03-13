@@ -17,12 +17,12 @@ input {
   color: black;
 }
 
-.register-inputs {
+.inputs {
   display: block;
   margin: .3rem 0;
 }
 
-#register-div {
+.login-reg-div {
  display: flex;
  flex-direction: column;
  justify-content: center;
