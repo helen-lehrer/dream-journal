@@ -15,13 +15,11 @@ const AddNewDreamLink = styled(Link)`
   color: black;
   width: 20%;
   margin: 1rem auto;
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  &:hover{
-    color: #f4bbd8;
-    background: black;
+  &:hover {
+    color: black;
   }
 `
 
@@ -41,14 +39,12 @@ const DreamListContainer = styled.div`
   flex-direction: column;
   width: 50%;
   margin: 1rem auto;
-
 `
 
 function DreamList(props){
   return (
     <React.Fragment>
       <AddNewDreamLink 
-        className="btn btn-secondary btn-sm"
         role="button"
         to="/new-dream-form"
         >Add New Dream</AddNewDreamLink>

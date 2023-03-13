@@ -35,7 +35,7 @@ input {
   opacity: 1; 
 }
 
-button {
+.login-reg-button {
   background: rgb(255, 255, 255, .5);
   border: none;
   display: block;
