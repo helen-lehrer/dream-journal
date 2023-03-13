@@ -33,15 +33,19 @@ function Register(){
     <RegisterHeader>Register</RegisterHeader>
     {signUpSuccess}
     <form onSubmit ={doSignUp}>
-      <input
-        type='text'
-        name='email'
-        placeholder='email' />
-      <input
-        type='password'
-        name='password'
-        placeholder='Password' />
-      <button type='submit'>Sign up</button>
+      <div id='register-div'>
+        <input
+          class= 'register-inputs'
+          type='text'
+          name='email'
+          placeholder='Email' />
+        <input
+          class= 'register-inputs'
+          type='password'
+          name='password'
+          placeholder='Password' />
+        <button type='submit'>Sign up</button>
+      </div>
     </form>
   </React.Fragment>
   );

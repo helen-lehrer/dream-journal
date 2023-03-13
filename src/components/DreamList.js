@@ -13,8 +13,7 @@ const AddNewDreamLink = styled(Link)`
   border: none;
   background: #fed5f180;
   color: black;
-  font-weight: bold;
-  width: 50%;
+  width: 20%;
   margin: 1rem auto;
   
   display: flex;
