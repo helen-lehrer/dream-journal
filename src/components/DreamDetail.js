@@ -15,10 +15,13 @@ function DreamDetail(props) {
       <p>{dream.sadBefore}</p>
       <p>{dream.symbols}</p>
 
-      <Link to="/edit-dream-form"><button>Edit Dream</button></Link>
+      <Link to="/edit-dream-form">
+        <button className='app-button'>Edit Dream</button>
+      </Link>
 
-      <Link to="/dream-list"><button onClick={()=>onClickingDelete(dream.id)}>Delete Dream</button></Link>
-  
+      <Link to="/dream-list">
+        <button className='app-button' onClick={()=>onClickingDelete(dream.id)}>Delete Dream</button>
+      </Link>
     </React.Fragment>
   )
 }

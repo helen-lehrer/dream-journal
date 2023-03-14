@@ -45,7 +45,7 @@ function Register(){
           type='password'
           name='password'
           placeholder='Password' />
-        <button class='login-reg-button' type='submit'>Sign up</button>
+        <button class='app-button' type='submit'>Sign up</button>
       </div>
     </form>
   </React.Fragment>

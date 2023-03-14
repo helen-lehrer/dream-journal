@@ -43,7 +43,7 @@ function SignIn(){
             type='password'
             name='signinPassword'
             placeholder='Password' />
-          <button class='login-reg-button' type='submit'>Sign in</button>
+          <button class='app-button' type='submit'>Sign in</button>
         </div>
       </form>
     </React.Fragment>

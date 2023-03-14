@@ -35,9 +35,29 @@ input {
   opacity: 1; 
 }
 
-.login-reg-button {
+.app-button {
   background: rgb(255, 255, 255, .5);
   border: none;
   display: block;
   margin: .5rem 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
