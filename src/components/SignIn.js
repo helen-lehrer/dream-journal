@@ -32,7 +32,7 @@ function SignIn(){
       <SignInHeader>Sign In</SignInHeader>
       {signInSuccess}
       <form onSubmit={doSignIn}>
-        <div class='login-reg-div'>
+        <div class='app-center-div'>
           <input
             class= 'inputs'
             type='text'

@@ -34,7 +34,7 @@ function Register(){
     <RegisterHeader>Register</RegisterHeader>
     {signUpSuccess}
     <form onSubmit ={doSignUp}>
-      <div class='login-reg-div'>
+      <div class='app-center-div'>
         <input
           class= 'inputs'
           type='text'

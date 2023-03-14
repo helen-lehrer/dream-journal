@@ -17,17 +17,41 @@ input {
   color: black;
 }
 
+textarea {
+  background: transparent;
+  color: black;
+}
+
 .inputs {
   display: block;
   margin: .3rem 0;
 }
 
-.login-reg-div {
+.app-center-div {
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
  margin: .3rem;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-container div {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxes {
+  margin-right: 10px;
+}
+
+.labels {
+  display: inline-flex;
 }
 
 ::placeholder { 
